@@ -1,0 +1,59 @@
+{
+  "common": {
+    "welcome": "Bienvenido",
+    "login": "Iniciar Sesión",
+    "signup": "Registrarse",
+    "logout": "Cerrar Sesión",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "create": "Crear",
+    "update": "Actualizar",
+    "back": "Volver",
+    "next": "Siguiente",
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito"
+  },
+  "auth": {
+    "email": "Email",
+    "password": "Contraseña",
+    "confirmPassword": "Confirmar Contraseña",
+    "fullName": "Nombre Completo",
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "noAccount": "¿No tienes cuenta?",
+    "hasAccount": "¿Ya tienes cuenta?",
+    "signInTitle": "Iniciar Sesión",
+    "signUpTitle": "Crear Cuenta",
+    "signInDescription": "Ingresa tu email y contraseña para acceder",
+    "signUpDescription": "Completa el formulario para crear tu cuenta",
+    "termsAgree": "Acepto los términos y condiciones y la política de privacidad"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Bienvenido a tu SaaS MVP",
+    "totalUsers": "Usuarios Totales",
+    "activeUsers": "Usuarios Activos",
+    "mrr": "MRR",
+    "conversionRate": "Tasa de Conversión",
+    "recentActivity": "Actividad Reciente",
+    "noActivity": "No hay actividad reciente aún"
+  },
+  "pricing": {
+    "free": "Gratis",
+    "pro": "Pro",
+    "enterprise": "Enterprise",
+    "perMonth": "/mes",
+    "perYear": "/año",
+    "currentPlan": "Plan Actual",
+    "upgradeTo": "Actualizar a",
+    "choosePlan": "Elegir Plan"
+  },
+  "errors": {
+    "generic": "Ocurrió un error. Por favor intenta nuevamente.",
+    "unauthorized": "No autorizado",
+    "notFound": "No encontrado",
+    "serverError": "Error del servidor"
+  }
+}

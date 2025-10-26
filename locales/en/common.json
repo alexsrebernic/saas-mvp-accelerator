@@ -1,0 +1,59 @@
+{
+  "common": {
+    "welcome": "Welcome",
+    "login": "Log In",
+    "signup": "Sign Up",
+    "logout": "Log Out",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "update": "Update",
+    "back": "Back",
+    "next": "Next",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success"
+  },
+  "auth": {
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "fullName": "Full Name",
+    "forgotPassword": "Forgot your password?",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "signInTitle": "Sign In",
+    "signUpTitle": "Create Account",
+    "signInDescription": "Enter your email and password to access",
+    "signUpDescription": "Complete the form to create your account",
+    "termsAgree": "I agree to the terms and conditions and privacy policy"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome to your SaaS MVP",
+    "totalUsers": "Total Users",
+    "activeUsers": "Active Users",
+    "mrr": "MRR",
+    "conversionRate": "Conversion Rate",
+    "recentActivity": "Recent Activity",
+    "noActivity": "No recent activity yet"
+  },
+  "pricing": {
+    "free": "Free",
+    "pro": "Pro",
+    "enterprise": "Enterprise",
+    "perMonth": "/month",
+    "perYear": "/year",
+    "currentPlan": "Current Plan",
+    "upgradeTo": "Upgrade to",
+    "choosePlan": "Choose Plan"
+  },
+  "errors": {
+    "generic": "An error occurred. Please try again.",
+    "unauthorized": "Unauthorized",
+    "notFound": "Not found",
+    "serverError": "Server error"
+  }
+}

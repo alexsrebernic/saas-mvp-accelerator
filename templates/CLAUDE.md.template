@@ -1,0 +1,340 @@
+# {{PROJECT_NAME}} - {{DESCRIPTION}}
+
+## 🎯 Contexto del Proyecto
+
+Este es un proyecto SaaS de tipo **{{PROJECT_TYPE}}** que resuelve [DESCRIBE EL PROBLEMA ESPECÍFICO AQUÍ].
+
+**Región objetivo**: {{REGION}}
+**MVP Timeline**: 14 días
+**Status**: En desarrollo
+
+## 🛠 Stack Tecnológico
+
+### Core
+- **Framework**: Next.js 14 (App Router)
+- **Database**: Supabase (PostgreSQL)
+- **Auth**: Supabase Auth
+- **Styling**: Tailwind CSS + shadcn/ui
+- **Deployment**: Vercel
+- **Type Safety**: TypeScript + Zod
+
+### Features Específicas
+{{FEATURES}}
+
+## 📁 Estructura del Proyecto
+
+```
+src/
+├── app/                # Next.js App Router
+│   ├── (auth)/        # Grupo de rutas de autenticación
+│   ├── (dashboard)/   # Grupo de rutas del dashboard
+│   └── api/           # API routes
+├── components/         # Componentes reutilizables
+│   ├── ui/            # shadcn/ui components
+│   ├── shared/        # Componentes compartidos
+│   └── features/      # Componentes específicos de features
+├── lib/               # Utilidades y configuraciones
+│   ├── supabase/      # Cliente Supabase
+│   ├── validations/   # Schemas Zod
+│   └── utils/         # Utilidades generales
+├── actions/           # Server Actions
+└── types/             # TypeScript types
+```
+
+## 🔑 Variables de Entorno Críticas
+
+Ver `.env.example` para todas las variables necesarias.
+
+**Variables que DEBEN configurarse antes del desarrollo**:
+- `NEXT_PUBLIC_SUPABASE_URL`: URL del proyecto Supabase
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY`: Anon key de Supabase
+- `SUPABASE_SERVICE_ROLE_KEY`: Service role key (para operaciones admin)
+
+**Variables opcionales según features**:
+- OpenAI API (si AI está habilitado)
+- Stripe/MercadoPago (si pagos están habilitados)
+- Resend API (si emails están habilitados)
+
+## 📊 Modelo de Negocio
+
+**Pricing Strategy**: {{PRICING_MODEL}}
+**MVP Price Point**: ${{MVP_PRICE}}/mes
+
+### Límites del Plan Gratuito
+- [DEFINIR LÍMITES ESPECÍFICOS - ej: 100 operaciones/mes]
+- [FEATURE LIMITADA - ej: Sin exportación a PDF]
+- [STORAGE - ej: 500MB de almacenamiento]
+
+### Estructura de Costos Estimada (MVP)
+
+#### Infraestructura
+- **Supabase**: Free tier hasta 500MB DB y 2GB bandwidth/mes
+- **Vercel**: Free tier hasta 100GB bandwidth/mes
+- **Costos mensuales estimados (0-100 usuarios)**: $0 - $25/mes
+
+#### APIs Externas
+[DOCUMENTAR LÍMITES Y COSTOS DE CADA API QUE USES]
+
+### Break-even Point
+- **Usuarios pagando necesarios**: [CALCULAR]
+- **MRR objetivo mes 3**: $500
+- **MRR objetivo mes 6**: $2,000
+
+## 🚀 Comandos Importantes
+
+```bash
+# Desarrollo
+npm run dev              # Inicia servidor de desarrollo en localhost:3000
+npm run build            # Build de producción
+npm run start            # Inicia servidor de producción
+
+# Base de Datos (Supabase)
+npm run db:migrate       # Ejecuta migraciones pendientes
+npm run db:push          # Push schema local a Supabase
+npm run db:pull          # Pull schema de Supabase a local
+npm run db:seed          # Carga datos de prueba
+npm run db:generate-types # Genera tipos TypeScript desde schema
+
+# Testing
+npm run test             # Ejecuta tests unitarios
+npm run test:watch       # Tests en modo watch
+npm run test:e2e         # Tests end-to-end con Playwright
+
+# Utilidades
+npm run generate:types   # Genera tipos desde Supabase
+npm run check:env        # Valida variables de entorno
+npm run format           # Formatea código con Prettier
+npm run lint             # Linter con ESLint
+
+# Deployment
+npm run deploy:preview   # Deploy preview en Vercel
+npm run deploy:production # Deploy a producción
+```
+
+## 🎨 Convenciones de Código
+
+### Componentes React
+
+#### Server Components (default)
+```tsx
+// app/dashboard/page.tsx
+export default async function DashboardPage() {
+  // Fetch data directamente en el componente
+  const data = await getData();
+
+  return (
+    <div>
+      {/* Renderizar */}
+    </div>
+  );
+}
+```
+
+#### Client Components (cuando es necesario)
+```tsx
+// components/interactive-button.tsx
+'use client';
+
+import { useState } from 'react';
+
+export function InteractiveButton() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <button onClick={() => setCount(count + 1)}>
+      Clicked {count} times
+    </button>
+  );
+}
+```
+
+**Regla**: Usar Server Components por defecto. Solo usar Client Components cuando:
+- Necesitas hooks (useState, useEffect, etc.)
+- Necesitas event handlers
+- Necesitas acceder a browser APIs
+
+### Server Actions Pattern
+
+```typescript
+// src/actions/user-actions.ts
+'use server';
+
+import { actionClient } from '@/lib/safe-action';
+import { z } from 'zod';
+import { revalidatePath } from 'next/cache';
+
+const updateProfileSchema = z.object({
+  fullName: z.string().min(1).max(100),
+  company: z.string().optional(),
+});
+
+export const updateProfile = actionClient
+  .schema(updateProfileSchema)
+  .action(async ({ parsedInput, ctx }) => {
+    const { user } = ctx;
+
+    // Lógica de actualización
+    const { data, error } = await supabase
+      .from('profiles')
+      .update({
+        full_name: parsedInput.fullName,
+        company: parsedInput.company,
+      })
+      .eq('id', user.id);
+
+    if (error) throw error;
+
+    revalidatePath('/dashboard');
+    return { success: true, data };
+  });
+```
+
+### Nomenclatura
+
+- **Archivos**: kebab-case (`user-profile.tsx`, `auth-form.tsx`)
+- **Componentes**: PascalCase (`UserProfile`, `AuthForm`)
+- **Funciones/variables**: camelCase (`getUserProfile`, `isAuthenticated`)
+- **Constantes**: UPPER_SNAKE_CASE (`MAX_FILE_SIZE`, `API_BASE_URL`)
+- **Types/Interfaces**: PascalCase (`User`, `ProfileData`)
+
+### Imports Order
+
+```typescript
+// 1. React/Next
+import { useState } from 'react';
+import Link from 'next/link';
+
+// 2. External libraries
+import { z } from 'zod';
+
+// 3. Internal absolute imports
+import { Button } from '@/components/ui/button';
+import { supabase } from '@/lib/supabase/client';
+
+// 4. Relative imports
+import { UserAvatar } from './user-avatar';
+
+// 5. Types
+import type { User } from '@/types';
+```
+
+## 📈 Métricas de Éxito del MVP
+
+### Semana 1-2 (Development)
+- [ ] Core features completas y funcionales
+- [ ] 0 errores críticos en build
+- [ ] Performance: LCP < 2.5s, FID < 100ms
+
+### Semana 3 (Alpha)
+- [ ] 5 usuarios alpha testeando
+- [ ] Feedback documentado
+- [ ] 90% de bugs críticos resueltos
+
+### Semana 4 (Beta Launch)
+- [ ] 10 usuarios beta activos
+- [ ] 70% retention rate semanal
+- [ ] < 3s tiempo de respuesta promedio
+- [ ] < 5% error rate
+
+### Mes 1-2 (Growth)
+- [ ] 100 usuarios registrados
+- [ ] 1 usuario pagando
+- [ ] NPS > 40
+
+### Mes 3-6 (Scale)
+- [ ] 500 usuarios registrados
+- [ ] $500 MRR
+- [ ] < 10% churn rate
+
+## 🔄 Flujo de Desarrollo
+
+### 1. Feature Planning
+- Crear issue en GitHub con user story
+- Definir acceptance criteria
+- Estimar esfuerzo (S/M/L)
+
+### 2. Development
+- Branch desde `main`: `feature/nombre-feature`
+- Desarrollar feature
+- Escribir tests
+- Actualizar CLAUDE.md si aplica
+
+### 3. Testing
+- Tests automáticos pasando
+- Testing manual de user flow
+- Preview deployment funcional
+
+### 4. Review
+- PR con checklist completo
+- Code review
+- QA testing
+
+### 5. Deploy
+- Merge a `main`
+- Auto-deploy a producción
+- Monitorear métricas
+
+## 🐛 Problemas Conocidos y Soluciones
+
+### [Problema #1]
+**Síntoma**: [Descripción]
+**Causa**: [Por qué pasa]
+**Solución**: [Cómo resolverlo]
+
+### [Problema #2]
+...
+
+## 📚 Recursos y Referencias
+
+### Documentación Oficial
+- [Next.js 14 Docs](https://nextjs.org/docs)
+- [Supabase Docs](https://supabase.com/docs)
+- [Tailwind CSS](https://tailwindcss.com/docs)
+- [shadcn/ui Components](https://ui.shadcn.com)
+
+### Guías Internas
+- [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md): Arquitectura del sistema
+- [docs/DEPLOYMENT.md](./docs/DEPLOYMENT.md): Guía de deployment
+- [docs/API_LIMITS.md](./docs/API_LIMITS.md): Límites de APIs externas
+- [docs/PRICING_STRATEGY.md](./docs/PRICING_STRATEGY.md): Estrategia de precios
+
+### APIs Integradas
+[LISTAR TODAS LAS APIS CON LINKS A SU DOCUMENTACIÓN]
+
+## 🔐 Security Checklist
+
+- [ ] RLS policies habilitadas en todas las tablas
+- [ ] Variables de entorno nunca commiteadas
+- [ ] Validación de input con Zod en todos los Server Actions
+- [ ] Rate limiting en endpoints públicos
+- [ ] HTTPS enforced en producción
+- [ ] Auth tokens rotados periódicamente
+
+## 🌍 Contexto Regional ({{REGION}})
+
+[SI ES LATAM/ARGENTINA, DOCUMENTAR]:
+- Integraciones de pago locales
+- Consideraciones fiscales
+- Idioma por defecto
+- Timezone
+- Moneda
+
+---
+
+**Última actualización**: {{TIMESTAMP}}
+**Generado por**: SaaS MVP Accelerator
+**Contacto**: [TU EMAIL/CONTACTO]
+
+---
+
+## 💡 Notas para Claude/AI Assistants
+
+Este archivo contiene el contexto completo del proyecto. Cuando hagas cambios significativos:
+
+1. Actualiza las secciones relevantes
+2. Documenta decisiones arquitecturales importantes
+3. Actualiza métricas de éxito con datos reales
+4. Agrega problemas conocidos y sus soluciones
+5. Mantén la fecha de última actualización
+
+**Prioridades actuales**: [ACTUALIZAR CON PRIORIDADES DEL SPRINT ACTUAL]

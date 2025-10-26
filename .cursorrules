@@ -1,0 +1,72 @@
+# SaaS MVP Accelerator - Cursor Rules
+
+## Project Context
+This is a Next.js 14 SaaS template with Supabase, optimized for rapid MVP development.
+
+## Stack
+- Next.js 14 (App Router)
+- TypeScript (strict mode)
+- Supabase (PostgreSQL + Auth + Storage)
+- Tailwind CSS + shadcn/ui
+- Server Actions (next-safe-action)
+- Zod for validation
+
+## Code Conventions
+
+### Components
+- Use Server Components by default
+- Only mark as 'use client' when necessary (interactivity, hooks, browser APIs)
+- File names: kebab-case (user-profile.tsx)
+- Component names: PascalCase (UserProfile)
+
+### Server Actions
+- Always use next-safe-action wrapper
+- Define schemas with Zod
+- Return { success, data, error } shape
+- Never expose sensitive data in errors
+
+### Database
+- Use Row Level Security (RLS) policies
+- Always use parameterized queries
+- Define types from Supabase schema: npm run db:generate-types
+
+### Styling
+- Use Tailwind utilities first
+- Extract to components if repeated >3 times
+- Use CVA for component variants
+- Dark mode support required
+
+### File Structure
+```
+src/
+├── app/            # Next.js App Router pages
+├── components/     # Reusable components
+├── lib/           # Utilities, clients, configs
+├── actions/       # Server Actions
+└── types/         # TypeScript types
+```
+
+## Best Practices
+- Document complex logic with comments
+- Update CLAUDE.md when making architectural changes
+- Test user flows before marking features complete
+- Optimize images with next/image
+- Implement loading and error states
+
+## Security
+- Validate all user input with Zod
+- Use environment variables for secrets
+- Implement rate limiting on public endpoints
+- Enable RLS on all Supabase tables
+
+## Performance
+- Lazy load heavy components
+- Use React.memo sparingly (measure first)
+- Optimize fonts with next/font
+- Cache API responses when appropriate
+
+## LATAM Specific
+- Support es/en locales
+- MercadoPago integration for payments
+- Consider Argentina tax implications
+- Format dates with date-fns in user's locale

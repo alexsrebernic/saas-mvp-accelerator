@@ -1,0 +1,712 @@
+# Product Requirements Document - {{PROJECT_NAME}}
+
+**Última actualización**: {{TIMESTAMP}}
+**Status**: Draft
+**Versión**: 1.0
+
+---
+
+## Elevator Pitch
+
+[UNA DESCRIPCIÓN DE 2-3 LÍNEAS QUE EXPLIQUE EL VALOR ÚNICO DEL PRODUCTO]
+
+Ejemplo: "{{PROJECT_NAME}} es una plataforma SaaS que permite a [USUARIO OBJETIVO] resolver [PROBLEMA] de manera [DIFERENCIADOR], reduciendo [MÉTRICA] en un X%."
+
+---
+
+## Problem Statement
+
+### El Problema
+
+[DESCRIPCIÓN DETALLADA DEL PROBLEMA QUE RESUELVE]
+
+**¿Por qué es importante?**
+- [Impacto económico]
+- [Impacto en productividad]
+- [Impacto en experiencia del usuario]
+
+### Impacto del Problema
+
+- **Pérdida de tiempo**: X horas/semana por usuario
+- **Costo financiero**: $Y/mes en soluciones actuales
+- **Frustración del usuario**: [Descripción de pain points emocionales]
+
+### Solución Actual vs Nuestra Solución
+
+| Aspecto | Solución Actual | Nuestra Solución | Ventaja |
+|---------|-----------------|------------------|---------|
+| Tiempo  | Manual, lento   | Automatizado     | 10x más rápido |
+| Costo   | $X/mes          | $Y/mes           | 50% ahorro |
+| UX      | Fragmentado     | Integrado        | Single source of truth |
+| Setup   | Semanas         | Minutos          | Time to value |
+
+---
+
+## Target Audience
+
+### Usuario Principal (Primary Persona)
+
+**Nombre**: [Ejemplo: María, Product Manager]
+
+**Demografía**:
+- **Edad**: 28-45 años
+- **Ubicación**: [Ciudad/País - ej: Buenos Aires, Argentina]
+- **Industria**: [Ej: SaaS, E-commerce, Agencias]
+- **Rol**: [Ej: Product Manager, Founder, Developer]
+- **Tamaño empresa**: [Ej: Startups 10-50 empleados]
+
+**Características**:
+- **Ingresos**: $[RANGO]
+- **Tech Savviness**: Alto/Medio/Bajo
+- **Idiomas**: Español/Inglés
+
+**Pain Points Específicos**:
+1. [Pain point #1 - ej: "Pierde 5 horas/semana copiando datos entre sistemas"]
+2. [Pain point #2]
+3. [Pain point #3]
+
+**Jobs to be Done**:
+- **Funcional**: "Necesito [ACCIÓN] para [RESULTADO]"
+- **Emocional**: "Quiero sentirme [EMOCIÓN] cuando [SITUACIÓN]"
+- **Social**: "Quiero que mi equipo/jefe vea que [PERCEPCIÓN]"
+
+**Quote representativa**:
+> "Me frustra mucho que [PROBLEMA]. Desearía poder [SOLUCIÓN] de manera simple."
+
+### Usuario Secundario (si aplica)
+
+[REPETIR ESTRUCTURA PARA USUARIO SECUNDARIO]
+
+---
+
+## Unique Selling Proposition (USP)
+
+### Diferenciador Principal
+
+[¿QUÉ NOS HACE ÚNICOS?]
+
+**En una oración**: {{PROJECT_NAME}} es el único [CATEGORÍA] que [DIFERENCIADOR CLAVE].
+
+### Ventajas Competitivas
+
+1. **[Ventaja #1]**: Por qué importa y por qué otros no pueden hacerlo fácilmente
+2. **[Ventaja #2]**: ...
+3. **[Ventaja #3]**: ...
+
+### Moat (Defensibilidad)
+
+¿Qué construiremos para mantener la ventaja?
+- [ ] Network effects
+- [ ] Datos propietarios
+- [ ] Switching costs
+- [ ] Brand
+- [ ] Otros: [especificar]
+
+---
+
+## Target Platforms
+
+- **Web**: ✅ Responsive, PWA-ready
+- **Mobile Web**: ✅ Optimizada para móvil (no app nativa en MVP)
+- **Desktop App**: ❌ Post-MVP
+- **Mobile Native**: ❌ Post-MVP
+- **API**: ✅ REST API disponible
+
+### Integraciones
+
+- [INTEGRACIÓN #1 - ej: Telegram Bot]
+- [INTEGRACIÓN #2 - ej: Slack]
+- [INTEGRACIÓN #3]
+
+---
+
+## Features List
+
+### 🔴 P0 - Core MVP (Semana 1-2) - MUST HAVE
+
+#### Autenticación y Onboarding
+- [ ] **Login con email/password**
+  - [ ] Formulario de login
+  - [ ] Validación de credenciales
+  - [ ] Manejo de errores
+  - [ ] "Forgot password" flow
+
+- [ ] **Registro de usuarios**
+  - [ ] Formulario de signup
+  - [ ] Verificación de email
+  - [ ] Terms & Conditions acceptance
+  - [ ] Auto-login después de verificación
+
+- [ ] **Onboarding Flow (máx 3 pasos)**
+  - [ ] Paso 1: [Ej: Configuración de perfil]
+  - [ ] Paso 2: [Ej: Primera acción clave]
+  - [ ] Paso 3: [Ej: Invitar team members]
+  - **Objetivo**: Time to value < 2 minutos
+
+#### Feature Core #1: [NOMBRE DEL FEATURE PRINCIPAL]
+
+**User Story**: Como [USUARIO], quiero [ACCIÓN] para [BENEFICIO]
+
+**Acceptance Criteria**:
+- [ ] Criterio #1
+- [ ] Criterio #2
+- [ ] Criterio #3
+
+**Technical Notes**:
+- [Consideraciones técnicas importantes]
+- [Dependencias de APIs]
+- [Edge cases a considerar]
+
+#### Feature Core #2: [SEGUNDO FEATURE CRÍTICO]
+
+[REPETIR ESTRUCTURA]
+
+### 🟡 P1 - MVP Completo (Semana 3-4) - SHOULD HAVE
+
+#### Dashboard Básico
+- [ ] **Métricas principales**
+  - [ ] [Métrica #1 - ej: Total de usuarios]
+  - [ ] [Métrica #2 - ej: Actividad semanal]
+  - [ ] [Métrica #3 - ej: Items procesados]
+
+- [ ] **Acciones rápidas**
+  - [ ] [Acción #1 - ej: Crear nuevo proyecto]
+  - [ ] [Acción #2 - ej: Invitar usuario]
+
+- [ ] **Navegación**
+  - [ ] Sidebar con secciones principales
+  - [ ] Header con user menu
+  - [ ] Mobile-responsive navigation
+
+#### Perfil y Settings
+- [ ] **User Profile**
+  - [ ] Ver y editar información personal
+  - [ ] Cambiar password
+  - [ ] Configurar notificaciones
+
+### 🟢 P2 - Post-MVP (Mes 1-2) - NICE TO HAVE
+
+#### Integraciones
+- [ ] [Integración #1]
+- [ ] [Integración #2]
+
+#### Features Avanzadas
+- [ ] [Feature avanzado #1]
+- [ ] [Feature avanzado #2]
+
+---
+
+## UX/UI Considerations
+
+### Design System
+- **Base**: shadcn/ui components
+- **Customización**: [Colores de marca, fonts personalizadas]
+- **Dark Mode**: ✅ Soporte desde día 1
+- **Mobile First**: ✅ Diseñar para móvil primero
+
+### Pantallas Principales
+
+#### 1. Landing Page
+**Objetivo**: Convertir visitantes en signups
+
+**Secciones**:
+- Hero con value proposition clara
+- Social proof (testimonios, logos)
+- Features principales (3-4)
+- Pricing simple
+- CTA claro y repetido
+
+**Estados**:
+- Default
+- Loading
+- Error
+
+**Conversión objetivo**: 5% visitor → signup
+
+**A/B Tests planeados**:
+- CTA copy
+- Hero image
+- Pricing display
+
+#### 2. Login / Signup
+**Objetivo**: Fricción mínima para autenticarse
+
+**Elementos**:
+- Social login (Google, GitHub)
+- Email/password fallback
+- "Remember me" checkbox
+- Forgot password link
+- Switch entre login/signup
+
+**Estados**:
+- Default
+- Loading
+- Success
+- Error (con mensajes específicos)
+
+#### 3. Onboarding Flow
+**Objetivo**: Time to first value < 2 minutos
+
+**Pasos**:
+1. [Paso 1 - ej: "Configurá tu perfil"]
+2. [Paso 2 - ej: "Creá tu primer proyecto"]
+3. [Paso 3 - ej: "Invitá a tu equipo"]
+
+**Puntos de fricción a evitar**:
+- Pedir demasiada información upfront
+- Pasos que no agregan valor inmediato
+- Falta de progress indicator
+
+**Skip option**: ✅ Permitir saltar y explorar
+
+#### 4. Dashboard Principal
+**Objetivo**: Overview rápido del estado actual
+
+**Información crítica** (above the fold):
+- [Métrica #1]
+- [Métrica #2]
+- [Acción primaria - CTA grande]
+
+**Progressive disclosure**: Mostrar detalles on-demand, no todo junto
+
+**Estados**:
+- Empty state (sin datos)
+- Loading
+- Populated (con datos)
+- Error
+
+**Empty State Design**:
+- Mensaje amigable explicando qué hacer
+- CTA claro para primera acción
+- Imagen/ilustración
+
+#### 5. [Feature Principal - Pantalla]
+[DESCRIBIR PANTALLA DEL FEATURE MÁS IMPORTANTE]
+
+### Componentes Reutilizables Clave
+
+- [ ] Buttons (primary, secondary, ghost, destructive)
+- [ ] Inputs (text, email, password, textarea)
+- [ ] Select/Dropdown
+- [ ] Modal/Dialog
+- [ ] Toast notifications
+- [ ] Loading states (skeleton, spinner)
+- [ ] Empty states
+- [ ] Error states
+- [ ] Cards
+- [ ] Tables (responsive)
+
+---
+
+## Non-Functional Requirements
+
+### Performance
+
+**Targets**:
+- ⚡ **First Contentful Paint (FCP)**: < 1.5s
+- ⚡ **Largest Contentful Paint (LCP)**: < 2.5s
+- ⚡ **Time to Interactive (TTI)**: < 3.5s
+- ⚡ **Cumulative Layout Shift (CLS)**: < 0.1
+- ⚡ **First Input Delay (FID)**: < 100ms
+- ⚡ **API response time (p95)**: < 500ms
+- ⚡ **Core Web Vitals**: Todo en verde
+
+**Estrategias**:
+- Server Components por defecto
+- Code splitting automático (Next.js)
+- Image optimization (next/image)
+- Lazy loading de componentes pesados
+- Caching agresivo
+
+### Scalability
+
+**Targets**:
+- 👥 **Soportar 1,000 usuarios concurrentes** (MVP)
+- 👥 **Arquitectura lista para 10,000 usuarios** (Mes 6)
+- 💾 **Database**: Preparada para millones de registros
+- 📊 **APIs**: Rate limiting configurado
+
+**Estrategias**:
+- Supabase connection pooling
+- Redis/Upstash para caching
+- CDN para assets estáticos
+- Horizontal scaling en Vercel
+
+### Security
+
+**Requirements**:
+- 🔒 **Encriptación**: Datos sensibles encriptados en DB
+- 🔑 **Auth**: JWT tokens con refresh mechanism
+- 🛡️ **Input validation**: Zod en todos los Server Actions
+- 🚫 **Rate limiting**: Por IP y por usuario
+- 🔐 **2FA**: Opcional desde día 1
+- 📜 **OWASP Top 10**: Compliance completo
+
+**Checklist**:
+- [ ] RLS policies en todas las tablas
+- [ ] Validación server-side siempre
+- [ ] Secrets en environment variables
+- [ ] HTTPS enforced
+- [ ] CSP headers configurados
+- [ ] CORS apropiado
+
+### Accessibility
+
+**Targets**:
+- ♿ **WCAG 2.1 AA compliance**
+- 📱 **Mobile-first responsive**
+- ⌨️ **Navegación completa por teclado**
+- 🎨 **Contraste de colores suficiente**
+- 📢 **Screen reader friendly**
+
+**Testing**:
+- Lighthouse accessibility audit > 90
+- Manual testing con screen readers
+- Keyboard-only navigation testing
+
+### Monitoring & Analytics
+
+**Métricas a trackear**:
+- **User behavior**: Page views, clicks, time on page
+- **Performance**: Web Vitals en producción
+- **Errors**: Error tracking en tiempo real
+- **Business**: Conversiones, churn, MRR
+
+**Tools**:
+- Vercel Analytics / Google Analytics
+- Sentry para error tracking
+- PostHog / Mixpanel para product analytics
+
+---
+
+## Monetization
+
+### Modelo de Precios: {{PRICING_MODEL}}
+
+#### 🆓 Plan Free
+
+**Límites**:
+- [X operaciones/mes]
+- [Features básicas]
+- [Limitación de storage]
+- Support: Community only
+
+**Objetivo**: Conversión a pago del 5-10%
+
+#### 💰 Plan Pro (${{MVP_PRICE}}/mes o $[ANUAL CON DESCUENTO]/año)
+
+**Incluye**:
+- ✅ Todo lo del plan Free
+- ✅ [Límite extendido o ilimitado]
+- ✅ [Features avanzadas]
+- ✅ [Priority support]
+- ✅ [Integraciones adicionales]
+
+**Target**: Indie hackers, small teams
+
+#### 🏢 Plan Enterprise (Custom pricing - desde $[PRECIO]/mes)
+
+**Incluye**:
+- ✅ Todo lo del plan Pro
+- ✅ SLA garantizado
+- ✅ Custom integrations
+- ✅ Dedicated support
+- ✅ On-premise deployment option
+- ✅ Custom contracts
+
+**Target**: Companies 100+ employees
+
+### Unit Economics
+
+**Targets**:
+- **CAC (Customer Acquisition Cost)**: < $50
+- **LTV (Lifetime Value)**: > $500 (asumiendo 12 meses retention)
+- **LTV:CAC Ratio**: > 3:1
+- **Payback period**: < 3 meses
+- **Gross margin**: > 80%
+
+### MRR Goals
+
+- **Mes 1**: $100 (1-2 usuarios pagando)
+- **Mes 3**: $500 (5-10 usuarios pagando)
+- **Mes 6**: $2,000 (20-40 usuarios pagando)
+- **Año 1**: $10,000 MRR
+
+### Estrategia de Descuentos
+
+- **Pago anual**: 20% de descuento
+- **Early adopters**: 50% off por 6 meses
+- **Students**: 50% off
+- **Non-profits**: 30% off
+
+---
+
+## Technical Architecture
+
+### Database Schema (Supabase PostgreSQL)
+
+```sql
+-- Users/Profiles table (extends Supabase auth.users)
+CREATE TABLE profiles (
+  id UUID REFERENCES auth.users PRIMARY KEY,
+  full_name TEXT NOT NULL,
+  email TEXT UNIQUE NOT NULL,
+  company TEXT,
+  avatar_url TEXT,
+  subscription_tier TEXT DEFAULT 'free' CHECK (subscription_tier IN ('free', 'pro', 'enterprise')),
+  subscription_status TEXT DEFAULT 'inactive',
+  stripe_customer_id TEXT,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Core entity table (ejemplo)
+CREATE TABLE [projects] (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  user_id UUID REFERENCES profiles(id) ON DELETE CASCADE,
+  name TEXT NOT NULL,
+  description TEXT,
+  status TEXT DEFAULT 'active',
+  metadata JSONB,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Indexes
+CREATE INDEX idx_projects_user_id ON projects(user_id);
+CREATE INDEX idx_projects_status ON projects(status);
+
+-- Row Level Security (RLS)
+ALTER TABLE profiles ENABLE ROW LEVEL SECURITY;
+ALTER TABLE projects ENABLE ROW LEVEL SECURITY;
+
+-- RLS Policies
+CREATE POLICY "Users can view own profile"
+  ON profiles FOR SELECT
+  USING (auth.uid() = id);
+
+CREATE POLICY "Users can update own profile"
+  ON profiles FOR UPDATE
+  USING (auth.uid() = id);
+
+CREATE POLICY "Users can view own projects"
+  ON projects FOR SELECT
+  USING (auth.uid() = user_id);
+
+CREATE POLICY "Users can create own projects"
+  ON projects FOR INSERT
+  WITH CHECK (auth.uid() = user_id);
+
+-- Triggers para updated_at
+CREATE OR REPLACE FUNCTION update_updated_at_column()
+RETURNS TRIGGER AS $$
+BEGIN
+  NEW.updated_at = NOW();
+  RETURN NEW;
+END;
+$$ language 'plpgsql';
+
+CREATE TRIGGER update_profiles_updated_at
+  BEFORE UPDATE ON profiles
+  FOR EACH ROW
+  EXECUTE PROCEDURE update_updated_at_column();
+```
+
+### API Structure
+
+```
+src/app/api/
+├── auth/
+│   ├── callback/route.ts        # OAuth callback
+│   └── signout/route.ts         # Sign out endpoint
+├── webhook/
+│   ├── stripe/route.ts          # Stripe webhooks
+│   └── mercadopago/route.ts     # MercadoPago webhooks
+├── [entity]/
+│   ├── route.ts                 # CRUD operations
+│   └── [id]/route.ts            # Single entity operations
+└── health/route.ts              # Health check
+```
+
+### Third-Party Services
+
+| Service | Purpose | Free Tier | Paid Plan |
+|---------|---------|-----------|-----------|
+| Supabase | Database + Auth | 500MB, 2GB bandwidth | $25/mo |
+| Vercel | Hosting | 100GB bandwidth | $20/mo |
+| Stripe | Payments (global) | Free | 2.9% + $0.30 |
+| MercadoPago | Payments (LATAM) | Free | ~4-6% |
+| Resend | Emails | 3k emails/mo | $20/mo |
+| OpenAI | AI features | - | Pay as you go |
+
+---
+
+## Success Metrics
+
+### 📊 User Metrics (Product)
+
+**Activation**:
+- Signup → First value: < 2 minutos
+- Activation rate: > 40%
+
+**Engagement**:
+- Daily Active Users (DAU)
+- Weekly Active Users (WAU)
+- DAU/MAU ratio: > 20%
+- Feature adoption rate
+
+**Retention**:
+- Day 1 retention: > 40%
+- Day 7 retention: > 20%
+- Day 30 retention: > 10%
+
+**Satisfaction**:
+- Net Promoter Score (NPS): > 40
+- Customer Satisfaction (CSAT): > 80%
+
+### 💰 Business Metrics
+
+**Revenue**:
+- Monthly Recurring Revenue (MRR)
+- Annual Recurring Revenue (ARR)
+- Average Revenue Per User (ARPU)
+
+**Growth**:
+- MRR growth rate: > 20% month-over-month
+- User growth rate: > 30% month-over-month
+- Viral coefficient (K-factor): > 1.0
+
+**Efficiency**:
+- Customer Acquisition Cost (CAC): < $50
+- Lifetime Value (LTV): > $500
+- LTV:CAC ratio: > 3:1
+- Churn rate: < 5% monthly
+
+### 🔧 Technical Metrics
+
+**Performance**:
+- Uptime: 99.9% (objetivo)
+- Error rate: < 1%
+- API response time (p95): < 500ms
+- Build time: < 2 minutos
+
+**Quality**:
+- Test coverage: > 80%
+- TypeScript strict mode: ✅
+- Zero critical security vulnerabilities
+
+---
+
+## Launch Strategy
+
+### Fase 1: MVP Alpha (Semana 1-2)
+
+**Objetivos**:
+- [ ] Core features completas
+- [ ] 0 bugs críticos
+- [ ] Performance targets alcanzados
+- [ ] Testing interno completo
+
+**Actividades**:
+- Desarrollo full-time
+- Daily standups
+- Testing continuo
+
+### Fase 2: Closed Beta (Semana 3)
+
+**Objetivos**:
+- [ ] 5-10 usuarios alpha testeando
+- [ ] Feedback documentado
+- [ ] Bugs priorizados y resueltos
+- [ ] Pricing validado
+
+**Actividades**:
+- Invitar early adopters (red personal)
+- Daily check-ins con alpha users
+- Iterar basado en feedback
+
+### Fase 3: Public Beta (Semana 4)
+
+**Objetivos**:
+- [ ] 50-100 usuarios beta
+- [ ] Primeros usuarios pagando
+- [ ] MVP sólido y estable
+- [ ] Infraestructura escalando bien
+
+**Actividades**:
+- Launch en Product Hunt
+- Post en Reddit (r/SaaS, r/entrepreneur)
+- Twitter/LinkedIn announcements
+
+### Fase 4: Soft Launch (Mes 1-2)
+
+**Objetivos**:
+- [ ] 500 usuarios objetivo
+- [ ] $500 MRR
+- [ ] Métricas de engagement saludables
+- [ ] Content marketing iniciado
+
+**Actividades**:
+- SEO content
+- Case studies
+- Partnerships
+
+---
+
+## Competitive Analysis
+
+### Competidores Directos
+
+#### [Competidor #1]
+- **Fortaleza**: [Qué hacen bien]
+- **Debilidad**: [Qué les falta]
+- **Pricing**: $X/mes
+- **Diferenciación nuestra**: [Cómo somos mejor]
+
+#### [Competidor #2]
+...
+
+### Competidores Indirectos
+
+[Soluciones alternativas que no son software]
+
+---
+
+## Riesgos y Mitigaciones
+
+| Riesgo | Probabilidad | Impacto | Mitigación |
+|--------|--------------|---------|------------|
+| Límites de API excedidos | Alta | Alto | Caching agresivo, plan de escalamiento |
+| Competencia nueva | Media | Alto | Lanzar rápido, construir moat con datos |
+| Problemas de escalabilidad | Baja | Alto | Arquitectura preparada, monitoring |
+| Churn alto | Media | Alto | Onboarding sólido, customer success |
+| Regulaciones (GDPR, etc.) | Baja | Medio | Legal review, compliance desde día 1 |
+
+---
+
+## Open Questions / Decisions Needed
+
+- [ ] ¿Precio óptimo validado con usuarios?
+- [ ] ¿Qué integraciones son prioritarias post-MVP?
+- [ ] ¿Estrategia de contenido/SEO definida?
+- [ ] ¿Partnership opportunities identificadas?
+- [ ] ¿Plan de customer support (chatbot, email, etc.)?
+
+---
+
+## Appendix
+
+### User Research Notes
+[LINKS A ENTREVISTAS, ENCUESTAS, ETC.]
+
+### Design Mockups
+[LINKS A FIGMA, DISEÑOS, ETC.]
+
+### Market Research
+[LINKS A ESTUDIOS DE MERCADO]
+
+---
+
+**Documento vivo - actualizar semanalmente**
+**Owner**: [TU NOMBRE]
+**Última revisión**: {{TIMESTAMP}}
