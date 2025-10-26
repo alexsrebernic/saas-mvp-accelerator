@@ -12,7 +12,7 @@
 
 ## 🎯 ¿Por qué este template?
 
-Después de crear 20+ MVPs en los últimos 2 años, identifiqué patrones que se repiten en cada proyecto exitoso. Este template codifica esas mejores prácticas en un starter kit listo para usar.
+Este template codifica las mejores prácticas modernas para desarrollo de SaaS, basado en patrones probados y arquitectura escalable.
 
 ### Filosofía del Proyecto
 
@@ -356,16 +356,6 @@ Las contribuciones son bienvenidas! Por favor lee [CONTRIBUTING.md](./docs/CONTR
 - 📝 Mejorar documentación
 - 🌍 Traducir a otros idiomas
 - 💻 Enviar pull requests
-
----
-
-## 📈 Casos de Éxito
-
-Proyectos construidos con este template:
-
-- **[Tu proyecto aquí]** - Describe tu éxito y compártelo
-
-¿Construiste algo con este template? [Házmelo saber](https://github.com/alexsrebernic/saas-mvp-accelerator/discussions)!
 
 ---
 
